@@ -54,25 +54,33 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       // backgroundColor: Colors.amber,
-      body: Column(
-        children: [
-          Expanded(
-            child: Container(
-              decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius:
-                      BorderRadius.only(bottomLeft: Radius.circular(50))),
+      body: Container(
+        height: MediaQuery.sizeOf(context).height,
+        decoration: const BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+                colors: [Colors.red, Colors.red, Colors.white, Colors.white])),
+        child: Column(
+          children: [
+            Expanded(
+              child: Container(
+                decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius:
+                        BorderRadius.only(bottomLeft: Radius.circular(50))),
+              ),
             ),
-          ),
-          Expanded(
-            child: Container(
-              decoration: const BoxDecoration(
-                  color: Colors.red,
-                  borderRadius:
-                      BorderRadius.only(topRight: Radius.circular(50))),
-            ),
-          )
-        ],
+            Expanded(
+              child: Container(
+                decoration: const BoxDecoration(
+                    color: Colors.red,
+                    borderRadius:
+                        BorderRadius.only(topRight: Radius.circular(50))),
+              ),
+            )
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
